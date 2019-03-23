@@ -41,7 +41,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="QFd-AH-QSZ" kind="show" id="UMW-Ya-ZfD"/>
+                                    <segue destination="QFd-AH-QSZ" kind="show" identifier="ItemSegue" id="UMW-Ya-ZfD"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -56,10 +56,10 @@
             </objects>
             <point key="canvasLocation" x="634" y="154"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Referenceitem View Controller-->
         <scene sceneID="RBF-z0-rmk">
             <objects>
-                <tableViewController id="QFd-AH-QSZ" sceneMemberID="viewController">
+                <tableViewController id="QFd-AH-QSZ" customClass="ReferenceitemViewController" customModule="Reference_App" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="Xs7-sB-6sk">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -127,12 +127,15 @@
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="299.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hBP-83-BJM">
-                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="320"/>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="watermellon" translatesAutoresizingMaskIntoConstraints="NO" id="hBP-83-BJM">
+                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="299.5"/>
                                                 </imageView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="bottom" secondItem="hBP-83-BJM" secondAttribute="bottom" id="XQc-6H-Fab"/>
+                                                <constraint firstAttribute="bottom" secondItem="hBP-83-BJM" secondAttribute="bottom" id="DjQ-kb-fnp"/>
+                                                <constraint firstItem="hBP-83-BJM" firstAttribute="top" secondItem="C5C-cO-rh9" secondAttribute="top" id="Hfn-nQ-wsj"/>
+                                                <constraint firstItem="hBP-83-BJM" firstAttribute="leading" secondItem="C5C-cO-rh9" secondAttribute="leading" id="h1H-yT-U6H"/>
+                                                <constraint firstAttribute="trailing" secondItem="hBP-83-BJM" secondAttribute="trailing" id="szf-2r-4tf"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -144,10 +147,15 @@
                             <outlet property="delegate" destination="QFd-AH-QSZ" id="2mn-TL-ego"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <outlet property="contentLabel" destination="OHY-BG-rHL" id="3v1-mF-BLe"/>
+                        <outlet property="imageView" destination="hBP-83-BJM" id="55b-1m-guo"/>
+                        <outlet property="nameLabel" destination="OHY-BG-rHL" id="EtT-yC-vgk"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wno-C5-zQB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1686" y="153"/>
+            <point key="canvasLocation" x="1685.625" y="152.11267605633802"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Zug-S0-i45">
@@ -166,4 +174,7 @@
             <point key="canvasLocation" x="-379" y="154"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="watermellon" width="500" height="500"/>
+    </resources>
 </document>
